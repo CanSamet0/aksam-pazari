@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/shopping"
+        android:id="@+id/bazaarFragment"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:icon="@drawable/favorite"
+        android:id="@+id/favoriteFragment"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:icon="@drawable/shopping_basket"
+        android:id="@+id/cartFragment"
+        tools:ignore="MenuTitle"/>
+
+    <item
+        android:icon="@drawable/profile"
+        android:id="@+id/profileFragment"
+        tools:ignore="MenuTitle"/>
+</menu>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="hello_blank_fragment">Yeni Fragment</string>
+    <string name="app_name">Akşam Pazarı</string>
+    <string name="night">AKŞAM</string>
+    <string name="bazaar_splash">PAZARI</string>
+    <string name="bazaar">PAZAR</string>
+    <string name="category">Category</string>
+    <string name="fresh_products">TAZE ÜRÜNLER</string>
+    <string name="baker_product">FIRIN ÜRÜNLERİ</string>
+    <string name="dairy_product">SÜT VE SÜT ÜRÜNLERİ</string>
+    <string name="delicatessen_product">ŞARKÜTERİ ÜRÜNLERİ</string>
+    <string name="organic_product">ORGANİK ÜRÜNLER</string>
+    <string name="seafood_product">DENİZ ÜRÜNLERİ</string>
+    <string name="ready_food_product">HAZIR YEMEKLER</string>
+    <string name="drinks_product">İÇECEKLER</string>
+    <string name="login">Giriş Yap</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">şifre</string>
+    <string name="go_register">Henüz kayıtlı değilseniz buraya tıklayın</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="name">ad</string>
+    <string name="surname">soyad</string>
+</resources>

@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AksamPazari" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#333C4B</item>
+    </style>
+
+    <style name="Theme.AksamPazari" parent="Base.Theme.AksamPazari">
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="searchIcon">@drawable/search_icon</item>
+        <item name="colorControlNormal">@color/app_orange</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/app_orange</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

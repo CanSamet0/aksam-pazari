@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731035762791",
+    "project_id": "aksam-pazari-62cd0",
+    "storage_bucket": "aksam-pazari-62cd0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731035762791:android:a24ae05f666b3a50d814c2",
+        "android_client_info": {
+          "package_name": "com.aksampazari"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5YpHL6uaGV_plcCMDOeVkq0xokfH8sUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

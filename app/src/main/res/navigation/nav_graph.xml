@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bazaarFragment">
+
+    <fragment
+        android:id="@+id/bazaarFragment"
+        android:name="com.aksampazari.presentation.bazaar.BazaarFragment"
+        android:label="fragment_bazaar"
+        tools:layout="@layout/fragment_bazaar" >
+        <action
+            android:id="@+id/action_bazaarFragment_to_freshProductFragment"
+            app:destination="@id/freshProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_bakerProductFragment"
+            app:destination="@id/bakerProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_dairyProductFragment"
+            app:destination="@id/dairyProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_delicatessenProductFragment"
+            app:destination="@id/delicatessenProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_organicProductFragment"
+            app:destination="@id/organicProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_seafoodProductFragment"
+            app:destination="@id/seafoodProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_readyFoodProductFragment"
+            app:destination="@id/readyFoodProductFragment" />
+        <action
+            android:id="@+id/action_bazaarFragment_to_drinksProductFragment"
+            app:destination="@id/drinksProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.aksampazari.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.aksampazari.presentation.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.aksampazari.presentation.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/freshProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.FreshProductFragment"
+        android:label="fragment_fresh_product"
+        tools:layout="@layout/fragment_fresh_product" />
+    <fragment
+        android:id="@+id/bakerProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.BakerProductFragment"
+        android:label="fragment_baker_product"
+        tools:layout="@layout/fragment_baker_product" />
+    <fragment
+        android:id="@+id/dairyProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.DairyProductFragment"
+        android:label="fragment_dairy_product"
+        tools:layout="@layout/fragment_dairy_product" />
+    <fragment
+        android:id="@+id/delicatessenProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.DelicatessenProductFragment"
+        android:label="fragment_delicatessen_product"
+        tools:layout="@layout/fragment_delicatessen_product" />
+    <fragment
+        android:id="@+id/organicProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.OrganicProductFragment"
+        android:label="fragment_organic_product"
+        tools:layout="@layout/fragment_organic_product" />
+    <fragment
+        android:id="@+id/seafoodProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.SeafoodProductFragment"
+        android:label="fragment_seafood_product"
+        tools:layout="@layout/fragment_seafood_product" />
+    <fragment
+        android:id="@+id/readyFoodProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.ReadyFoodProductFragment"
+        android:label="fragment_ready_food_product"
+        tools:layout="@layout/fragment_ready_food_product" />
+    <fragment
+        android:id="@+id/drinksProductFragment"
+        android:name="com.aksampazari.presentation.bazaar.categories.DrinksProductFragment"
+        android:label="fragment_drinks_product"
+        tools:layout="@layout/fragment_drinks_product" />
+</navigation>

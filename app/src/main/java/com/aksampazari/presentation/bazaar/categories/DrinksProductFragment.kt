@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.aksampazari.R
 import com.aksampazari.databinding.FragmentDrinksProductBinding
 
 class DrinksProductFragment : Fragment() {
@@ -16,7 +15,7 @@ class DrinksProductFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         _binding = FragmentDrinksProductBinding.inflate(inflater, container, false)
         return binding.root
     }

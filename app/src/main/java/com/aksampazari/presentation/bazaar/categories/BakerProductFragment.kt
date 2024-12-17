@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.aksampazari.R
 import com.aksampazari.databinding.FragmentBakerProductBinding
-import com.aksampazari.databinding.FragmentFreshProductBinding
 
 class BakerProductFragment : Fragment() {
 
@@ -18,7 +16,7 @@ class BakerProductFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         _binding = FragmentBakerProductBinding.inflate(inflater, container, false)
         return binding.root
     }

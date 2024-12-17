@@ -2,9 +2,7 @@ package com.aksampazari.presentation.bazaar.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.aksampazari.R
 import com.aksampazari.data.local.Category
 import com.aksampazari.databinding.ItemCategoryBinding
 

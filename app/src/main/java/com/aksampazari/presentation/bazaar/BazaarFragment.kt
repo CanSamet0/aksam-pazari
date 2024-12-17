@@ -23,7 +23,7 @@ class BazaarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         _binding = FragmentBazaarBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,21 +37,29 @@ class BazaarFragment : Fragment() {
 
         fun generateCategoryList(): List<Category> {
             return listOf(
-                Category("Taze Ürünler", R.drawable.fresh_image,
+                Category(
+                    getText(R.string.fresh_products).toString(), R.drawable.fresh_image,
                     R.id.action_bazaarFragment_to_freshProductFragment),
-                Category("Fırın Ürünleri", R.drawable.baker_image,
+                Category(
+                    getText(R.string.baker_product).toString(), R.drawable.baker_image,
                     R.id.action_bazaarFragment_to_bakerProductFragment),
-                Category("Süt ve Süt Ürünleri", R.drawable.dairy_image,
+                Category(
+                    getText(R.string.dairy_product).toString(), R.drawable.dairy_image,
                     R.id.action_bazaarFragment_to_dairyProductFragment),
-                Category("Şarküteri Ürünleri", R.drawable.delicatessen_image,
+                Category(
+                    getText(R.string.delicatessen_product).toString(), R.drawable.delicatessen_image,
                     R.id.action_bazaarFragment_to_delicatessenProductFragment),
-                Category("Organik Ürünler", R.drawable.organic_image,
+                Category(
+                    getText(R.string.organic_product).toString(), R.drawable.organic_image,
                     R.id.action_bazaarFragment_to_organicProductFragment),
-                Category("Deniz Ürünleri", R.drawable.seafood_image,
+                Category(
+                    getText(R.string.seafood_product).toString(), R.drawable.seafood_image,
                     R.id.action_bazaarFragment_to_seafoodProductFragment),
-                Category("Hazır Yemekler", R.drawable.ready_meals
+                Category(
+                    getText(R.string.ready_food_product).toString(), R.drawable.ready_meals
                     , R.id.action_bazaarFragment_to_readyFoodProductFragment),
-                Category("İçecekler", R.drawable.drinks_image,
+                Category(
+                    getText(R.string.drinks_product).toString(), R.drawable.drinks_image,
                     R.id.action_bazaarFragment_to_drinksProductFragment)
             )
         }

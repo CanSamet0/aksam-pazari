@@ -1,7 +1,9 @@
-package com.aksampazari.presentation.login.fragments
+package com.aksampazari.presentation.authentication
 
-import android.content.Intent
+import android.content.Context
 import android.graphics.Color
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -15,7 +17,6 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.aksampazari.R
 import com.aksampazari.databinding.FragmentRegisterBinding
-import com.aksampazari.presentation.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -30,14 +31,15 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+    ): View{
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val spannable = SpannableString("Zaten kayıtlıysanız buraya tıklayın.")
+
+        val spannable = SpannableString(getString(R.string.already_registered))
         spannable.setSpan(
             ForegroundColorSpan(Color.GREEN),
             20,
@@ -52,7 +54,11 @@ class RegisterFragment : Fragment() {
 
         val eyeClose = binding.ibEyeClose
         val eyeOpen = binding.ibEyeOpen
+        val eyeCloseVerification = binding.ibEyeCloseVerification
+        val eyeOpenVerification = binding.ibEyeOpenVerification
         val registerPassword = binding.etRegisterPassword
+        val registerPasswordVerification= binding.etRegisterPasswordVerification
+
         eyeClose.setOnClickListener {
             eyeClose.visibility = View.INVISIBLE
             eyeOpen.visibility = View.VISIBLE
@@ -67,44 +73,84 @@ class RegisterFragment : Fragment() {
             registerPassword.setSelection(registerPassword.text?.length ?: 0)
         }
 
+        eyeCloseVerification.setOnClickListener {
+            eyeCloseVerification.visibility = View.INVISIBLE
+            eyeOpenVerification.visibility = View.VISIBLE
+            registerPasswordVerification.transformationMethod = null
+            registerPasswordVerification.setSelection(registerPasswordVerification.text?.length ?: 0)
+        }
+
+        eyeOpenVerification.setOnClickListener {
+            eyeOpenVerification.visibility = View.INVISIBLE
+            eyeCloseVerification.visibility = View.VISIBLE
+            registerPasswordVerification.transformationMethod = PasswordTransformationMethod.getInstance()
+            registerPasswordVerification.setSelection(registerPasswordVerification.text?.length ?: 0)
+        }
+
         auth = Firebase.auth
         binding.btnRegister.setOnClickListener {
-            val name = binding.etRegisterName.text.toString()
-            val surname = binding.etRegisterSurname.text.toString()
             val email = binding.etRegisterEmail.text.toString()
-            val password = binding.etRegisterPassword.text.toString()
-            if (email.isEmpty() || password.isEmpty()){
-                Toast.makeText(
+            val password = binding.etRegisterPassword.text.toString().trim()
+            val passwordVerification = binding.etRegisterPasswordVerification.text.toString().trim()
+
+            if (!isItConnected()){
+                Toasty.warning(
                     requireContext(),
-                    "E-mail veya şifre boş bırakılamaz!",
-                    Toast.LENGTH_SHORT).show()
+                    getText(R.string.no_internet_connection),
+                    Toast.LENGTH_SHORT,
+                    true
+                ).show()
                 return@setOnClickListener
             }
-            registerUser(email, password, name ,surname)
+
+            if (email.isEmpty() || password.isEmpty()){
+                Toasty.warning(
+                    requireContext(),
+                    getText(R.string.email_password_not_blank),
+                    Toast.LENGTH_SHORT,
+                    true
+                ).show()
+                return@setOnClickListener
+            }
+
+            if (password == passwordVerification){
+                registerUser(email, password)
+            }else{
+                Toasty.warning(
+                    requireContext(),
+                    getText(R.string.password_not_confirmed),
+                    Toast.LENGTH_SHORT,
+                    true
+                ).show()
+                return@setOnClickListener
+            }
         }
     }
 
-    private fun registerUser(email: String, password: String, name: String, surname:String) {
+    private fun isItConnected(): Boolean {
+        val connectivityManager = requireContext()
+            .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork
+        val capabilities = connectivityManager.getNetworkCapabilities(network)
+        return capabilities != null
+                && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
+    private fun registerUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener{task ->
                 if (task.isSuccessful){
                     Toasty.success(
                         requireContext(),
-                        "Kayıt başarılı.",
+                        getText(R.string.register_successful),
                         Toast.LENGTH_SHORT,
                         true).show()
-                    val intent = Intent(requireContext(), MainActivity::class.java).apply {
-                        putExtra("USER_EMAIL", email)
-                        putExtra("USER_PASSWORD", password)
-                        putExtra("USER_NAME", name)
-                        putExtra("USER_SURNAME", surname)
-                    }
-                    startActivity(intent)
-                    requireActivity().finish()
+                    findNavController().navigate(R.id.action_registerFragment_to_bazaarFragment)
+
                 }else {
                     Toasty.error(
                         requireContext(),
-                        "Kayıt başarısız",
+                        getText(R.string.register_failed),
                         Toast.LENGTH_SHORT,
                         true).show()
                 }

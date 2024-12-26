@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_bottom_sheet"
+    tools:context=".presentation.profile.settings.SettingsEditBalanceFragment">
+
+    <TextView
+        android:id="@+id/tv_edit_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/balance"
+        android:textColor="@color/white"
+        android:fontFamily="@font/exo_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/default_money"
+        android:textColor="@color/app_orange"
+        android:fontFamily="@font/exo_light"
+        app:layout_constraintStart_toEndOf="@id/tv_edit_balance"
+        app:layout_constraintTop_toTopOf="@id/tv_edit_balance"/>
+
+    <EditText
+        android:id="@+id/et_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="18"
+        android:fontFamily="@font/exo_light"
+        android:hint="@string/card_number"
+        android:inputType="number"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/app_orange"
+        android:textColorHint="@color/app_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_edit_balance"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/et_card_day"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="26dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="3"
+        android:fontFamily="@font/exo_light"
+        android:hint="@string/card_day"
+        android:inputType="number"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/app_orange"
+        android:textColorHint="@color/app_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_card_number"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/et_card_month"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="3"
+        android:fontFamily="@font/exo_light"
+        android:hint="@string/card_month"
+        android:inputType="number"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/app_orange"
+        android:textColorHint="@color/app_orange"
+        app:layout_constraintStart_toEndOf="@id/et_card_day"
+        app:layout_constraintTop_toTopOf="@id/et_card_day"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/et_card_cvv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="3"
+        android:fontFamily="@font/exo_light"
+        android:hint="@string/card_cvv"
+        android:inputType="number"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/app_orange"
+        android:textColorHint="@color/app_orange"
+        app:layout_constraintEnd_toEndOf="@id/et_card_number"
+        app:layout_constraintTop_toTopOf="@id/et_card_month"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/add_and_finish"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_card_cvv"
+        app:layout_constraintEnd_toEndOf="@id/et_card_cvv"
+        style="@style/CustomButtonStyle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

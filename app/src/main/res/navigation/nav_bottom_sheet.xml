@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bottom_sheet"
+    app:startDestination="@id/settingsEditProfileFragment">
+
+    <fragment
+        android:id="@+id/settingsEditProfileFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsEditProfileFragment"
+        android:label="fragment_settings_edit_profile"
+        tools:layout="@layout/fragment_settings_edit_profile" >
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsEditBalanceFragment"
+            app:destination="@id/settingsEditBalanceFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsComminicationFragment"
+            app:destination="@id/settingsComminicationFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsAddressFragment"
+            app:destination="@id/settingsAddressFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsPasswordFragment"
+            app:destination="@id/settingsPasswordFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsDeleteAccountFragment"
+            app:destination="@id/settingsDeleteAccountFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsExitAppFragment"
+            app:destination="@id/settingsExitAppFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsOrderHistoryFragment"
+            app:destination="@id/settingsOrderHistoryFragment" />
+        <action
+            android:id="@+id/action_settingsEditProfileFragment_to_settingsNotificationFragment"
+            app:destination="@id/settingsNotificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsEditBalanceFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsEditBalanceFragment"
+        android:label="fragment_settings_edit_balance"
+        tools:layout="@layout/fragment_settings_edit_balance" >
+    </fragment>
+    <fragment
+        android:id="@+id/settingsComminicationFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsComminicationFragment"
+        android:label="fragment_settings_comminication"
+        tools:layout="@layout/fragment_settings_comminication" >
+    </fragment>
+    <fragment
+        android:id="@+id/settingsAddressFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsAddressFragment"
+        android:label="fragment_settings_address"
+        tools:layout="@layout/fragment_settings_address" >
+    </fragment>
+    <fragment
+        android:id="@+id/settingsPasswordFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsPasswordFragment"
+        android:label="fragment_settings_password"
+        tools:layout="@layout/fragment_settings_password" >
+    </fragment>
+    <fragment
+        android:id="@+id/settingsDeleteAccountFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsDeleteAccountFragment"
+        android:label="fragment_settings_delete_account"
+        tools:layout="@layout/fragment_settings_delete_account" />
+    <fragment
+        android:id="@+id/settingsExitAppFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsExitAppFragment"
+        android:label="fragment_settings_exit_app"
+        tools:layout="@layout/fragment_settings_exit_app" />
+    <fragment
+        android:id="@+id/settingsOrderHistoryFragment"
+        android:name="com.aksampazari.presentation.profile.settings.SettingsOrderHistoryFragment"
+        android:label="fragment_settings_order_history"
+        tools:layout="@layout/fragment_settings_order_history" />
+    <fragment
+        android:id="@+id/settingsNotificationFragment"
+        android:name="com.aksampazari.SettingsNotificationFragment"
+        android:label="fragment_settings_notification"
+        tools:layout="@layout/fragment_settings_notification" />
+</navigation>

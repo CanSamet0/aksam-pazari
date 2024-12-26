@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    tools:context=".presentation.profile.settings.SettingsEditProfileFragment">
+
+    <ImageButton
+        android:id="@+id/ib_edit_profile_camera"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:elevation="8dp"
+        android:background="@drawable/bg_edit_profile_button"
+        android:src="@drawable/edit_profile_camera"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/ib_edit_profile_gallery"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:elevation="8dp"
+        android:background="@drawable/bg_edit_profile_button"
+        android:src="@drawable/edit_profile_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_edit_profile_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/camera"
+        android:fontFamily="@font/exo_light"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/ib_edit_profile_camera"
+        app:layout_constraintStart_toStartOf="@id/ib_edit_profile_camera"
+        app:layout_constraintEnd_toEndOf="@id/ib_edit_profile_camera"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gallery"
+        android:fontFamily="@font/exo_light"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/ib_edit_profile_gallery"
+        app:layout_constraintEnd_toEndOf="@id/ib_edit_profile_gallery"
+        app:layout_constraintTop_toBottomOf="@id/ib_edit_profile_gallery"/>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="18"
+        android:fontFamily="@font/exo_light"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/app_orange"
+        android:textColorHint="@color/app_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_edit_profile_camera"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/et_surname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="18"
+        android:fontFamily="@font/exo_light"
+        android:hint="@string/surname"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/app_orange"
+        android:textColorHint="@color/app_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/et_surname"
+        app:layout_constraintTop_toBottomOf="@id/et_surname"
+        style="@style/CustomButtonStyle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

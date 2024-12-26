@@ -5,4 +5,7 @@
     <color name="app_orange">#E37400</color>
     <color name="first_blue">#333C4B</color>
     <color name="second_blue">#4A4C5C</color>
+    <color name="transparent">#00FF0000</color>
+    <color name="green">#34A853</color>
+    <color name="red">#DB4437</color>
 </resources>

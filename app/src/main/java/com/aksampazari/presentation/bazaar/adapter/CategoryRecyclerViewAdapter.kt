@@ -7,7 +7,7 @@ import com.aksampazari.data.local.Category
 import com.aksampazari.databinding.ItemCategoryBinding
 
 class CategoryRecyclerViewAdapter(
-    private val fakeCategory: List<Category>,
+    private val categories: List<Category>,
     private val navigateToFragment: (Int) -> Unit):
     RecyclerView.Adapter<CategoryRecyclerViewAdapter.ViewHolder>()
 {
@@ -34,13 +34,14 @@ class CategoryRecyclerViewAdapter(
     }
 
     override fun getItemCount(): Int {
-        return fakeCategory.size
+        return categories.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val categoryName = fakeCategory[position].categoryName
-        val categoryImage= fakeCategory[position].categoryImage
-        val categoryNavigationId = fakeCategory[position]
+        val categoryName = categories[position].categoryName
+        val categoryImage= categories[position].categoryImage
+        val categoryNavigationId = categories[position]
+
         holder.bind(
             categoryName,
             categoryImage,
